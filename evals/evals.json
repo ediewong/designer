@@ -1,0 +1,79 @@
+{
+  "skill_name": "systems-design-advisor",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我们的社区产品最近半年用户活跃度一直在下降，DAU 从 12 万掉到了 7 万。我们试过加了很多新功能——短视频、直播、问答——但指标不见好转，反而感觉产品越来越臃肿了。老板让我出一个诊断报告，帮我看看到底哪里出了问题？",
+      "expected_output": "一份系统化诊断分析，包含：识别出核心增强回路断裂（而非单纯功能不足），指出功能堆叠导致注意力存量被稀释的调节回路问题，找到杠杆点（可能是信息流结构或系统目标层面），并给出带副作用预判的优先级建议。",
+      "assertions": [
+        {
+          "name": "system_structure_identified",
+          "description": "Response identifies the system structure behind the problem — including stocks (e.g., user attention, content volume), flows (acquisition vs churn), and feedback loops — rather than just listing surface-level issues",
+          "type": "llm_judge"
+        },
+        {
+          "name": "root_cause_vs_symptom",
+          "description": "Response explicitly distinguishes symptoms (DAU drop, feature bloat) from systemic root causes (e.g., broken reinforcing loop, attention dilution), and reframes the problem for the user",
+          "type": "llm_judge"
+        },
+        {
+          "name": "leverage_points_identified",
+          "description": "Response identifies specific leverage points using Meadows' framework (e.g., information flow, system rules, or system goals) and explains why intervening there would be more effective than adding more features",
+          "type": "llm_judge"
+        },
+        {
+          "name": "side_effects_predicted",
+          "description": "Design recommendations include predictions of potential side effects or second-order consequences of the proposed changes",
+          "type": "llm_judge"
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "我在做一个 B2B 的项目管理工具，注册转化率还行（landing page 到注册大概 8%），但注册后 7 天留存只有 15%。我们的 onboarding 流程是：注册 → 填公司信息 → 创建第一个项目 → 邀请团队成员 → 开始用。大部分人卡在「邀请团队成员」这一步就走了。帮我分析一下怎么优化这个注册流程？",
+      "expected_output": "不仅仅优化注册流程的 UI，而是从系统角度分析：识别出「邀请成员」步骤存在的延迟问题（用户必须等别人加入才能体验核心价值），指出这是一个典型的冷启动/鸡生蛋问题，建议重构信息流结构让单人也能体验到价值。",
+      "assertions": [
+        {
+          "name": "beyond_ui_optimization",
+          "description": "Response goes beyond simple UI/UX tweaks (e.g., 'make the button bigger', 'reduce form fields') and analyzes the structural reason behind the drop-off",
+          "type": "llm_judge"
+        },
+        {
+          "name": "delay_identified",
+          "description": "Response identifies the delay between user action and value realization — specifically that requiring team invitation before experiencing core value creates a critical gap",
+          "type": "llm_judge"
+        },
+        {
+          "name": "actionable_recommendations",
+          "description": "Response provides concrete, specific design recommendations (not generic best practices) that address the systemic issue, such as enabling solo value experience or restructuring the onboarding sequence",
+          "type": "llm_judge"
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "We have a marketplace product connecting freelance designers with businesses. We've noticed a weird pattern: when we run promotions to attract more designers to the platform, our customer satisfaction scores actually go DOWN. More supply should be good, right? What's going on and what should we do about it?",
+      "expected_output": "A systems thinking analysis that identifies the counterintuitive dynamics: more designers dilutes average quality (or perceived quality), creates a paradox-of-choice balancing loop, and may be degrading the matching/curation mechanism. Should identify the key feedback loops at play and suggest interventions at the right leverage point (likely curation/matching rules rather than supply quantity).",
+      "assertions": [
+        {
+          "name": "counterintuitive_dynamics_explained",
+          "description": "Response explains why more supply leads to lower satisfaction — identifying the counterintuitive system dynamics (e.g., quality dilution, choice overload, or degraded signal-to-noise ratio) rather than treating it as a simple bug",
+          "type": "llm_judge"
+        },
+        {
+          "name": "feedback_loops_mapped",
+          "description": "Response maps out the relevant feedback loops — at minimum a reinforcing loop and a balancing loop — showing how they interact to produce the observed outcome",
+          "type": "llm_judge"
+        },
+        {
+          "name": "correct_intervention_level",
+          "description": "Recommendations target the right level of intervention (e.g., system rules like curation/matching, or information flow like reviews/filtering) rather than just adjusting supply volume",
+          "type": "llm_judge"
+        }
+      ],
+      "files": []
+    }
+  ]
+}
