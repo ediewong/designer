@@ -1,132 +1,90 @@
-# Systems Design Advisor Skill
+# Design Skills Collection
 
-一个融合系统思考（Donella Meadows *Thinking in Systems*）的产品设计顾问 Claude Skill。它不只是给 UI 建议，而是帮你看到产品背后的系统结构，包含反馈回路、存量流量、延迟、杠杆点，然后在最有效的地方干预。
+一个聚焦产品设计、设计系统、信息架构与复杂界面分析的 skill 合集仓库。
 
----
+目前仓库收录两个方向：
 
-## 什么时候会触发
+- **Systems Design Advisor**：用系统思考分析产品问题，适合诊断增长、留存、流程和体验中的结构性原因。
+- **Object Modeling for Design**：用 Narrative Object Model 分析设计稿、后台系统和平台型产品，把界面问题还原到对象、关系、动作与属性层。
 
-当你和 Claude 聊到以下话题时，这个 skill 会自动介入：
+## Skills
 
-- **产品设计优化** - 页面、功能、交互流程的改进建议
-- **用户体验诊断** - 留存差、转化低、用户流失等问题的根因分析
-- **功能设计评审** - 评估一个新功能是否值得做、怎么做、有什么副作用
-- **产品架构分析** - 信息架构、功能结构、模块关系的梳理
-- **增长瓶颈分析** - 增长停滞、指标不涨的系统性原因
+### 1. Systems Design Advisor
 
-即使你只是随口说“帮我看看这个产品有什么问题”，它也会触发。
+一个融合系统思考（Donella Meadows *Thinking in Systems*）的产品设计顾问 skill。它不只是给 UI 建议，而是帮你看到产品背后的系统结构，包含反馈回路、存量流量、延迟、杠杆点，然后在最有效的地方干预。
 
----
+源码位于仓库根目录，打包文件为 `systems-design-advisor.skill`。
 
-## 核心方法论：三层分析框架
+### 2. Object Modeling for Design
 
-### 第一层：识别系统结构
+一个面向 B 端、平台型产品与复杂工作流界面的设计分析 skill。它通过 Narrative Object Model 帮你从结构视角梳理系统中的对象、关系、动作与属性，并据此给出信息架构、组件抽象与界面改进建议。
 
-不急着给建议，先看清产品的系统结构：
-
-| 概念 | 产品语境 |
-|------|---------|
-| **存量 (Stocks)** | 用户数、内容量、信任度、习惯强度 |
-| **流量 (Flows)** | 新用户获取 vs 流失、内容生产 vs 消费 |
-| **增强回路 (Reinforcing)** | 用户越多 → 内容越多 → 吸引更多用户 |
-| **调节回路 (Balancing)** | 信息过载、认知负担、审核瓶颈 |
-| **延迟 (Delays)** | 注册到体验核心价值的时间差 |
-
-### 第二层：定位杠杆点
-
-基于 Meadows 的 12 个杠杆点，聚焦产品设计中最有效的几个：
-
-1. **信息流结构** - 用户能不能看到他们需要的反馈？
-2. **系统规则** - 激励机制和期望行为是否一致？
-3. **自组织能力** - 产品是否给用户留了创造空间？
-4. **系统目标** - 产品目标和用户目标是否对齐？
-5. **范式转换** - 有时问题不在细节，在于思维模型要重构
-
-### 第三层：给出设计建议
-
-每条建议都包含四个要素：诊断（看到了什么问题）、因果链（为什么产生这个现象）、处方（具体改动方向）、副作用预判（改了之后可能带来什么连锁反应）。
-
----
-
-## 常见问题的系统思维切入角度
-
-| 表面症状 | 常见系统性根因 |
-|---------|--------------|
-| 用户不活跃 | 增强回路未建立或已断裂 |
-| 功能越做越多但指标不涨 | 缺少调节回路意识，没有“减法机制” |
-| 新功能上线后老功能数据下降 | 功能间竞争共享存量（用户注意力） |
-| 用户投诉多但不流失 | 强锁定效应（转换成本高） |
-| A/B 测试结果互相矛盾 | 系统中存在延迟，短期和长期数据讲不同的故事 |
-| 增长到某个点就停滞 | 碰到调节回路天花板 |
-
----
-
-## Evals
-
-Skill 附带 3 个结构化评估场景：
-
-| Eval | 场景 | 断言数 |
-|------|------|-------|
-| `eval-1` | 社区产品 DAU 持续下降 + 功能臃肿诊断 | 4（系统结构识别、根因 vs 症状区分、杠杆点定位、副作用预判） |
-| `eval-2` | B2B 工具注册后留存低，卡在邀请步骤 | 3（超越 UI 优化、延迟识别、可操作建议） |
-| `eval-3` | 双边市场供给增加反而满意度下降 | 3（反直觉动态解释、反馈回路映射、正确干预层级） |
-
----
+源码位于 `object-modeling-for-design/`，打包文件为 `object-modeling-for-design.skill`。
 
 ## 安装
 
-### 方式 A：安装 `.skill` 文件
+### 方式 A：安装打包文件
 
 ```bash
 claude skill install systems-design-advisor.skill
+claude skill install object-modeling-for-design.skill
 ```
 
-### 方式 B：直接使用仓库源码
+### 方式 B：直接使用源码
 
-将仓库内容放入 Claude skills 目录，并将目录命名为 `systems-design-advisor`：
+将任一 skill 目录复制到 Claude skills 目录下，例如：
 
 ```text
-~/.claude/skills/systems-design-advisor/
-├── SKILL.md
-├── evals/
-│   └── evals.json
-├── LICENSE
-└── README.md
+~/.claude/skills/
+├── systems-design-advisor/
+│   ├── SKILL.md
+│   ├── evals/
+│   │   └── evals.json
+│   ├── LICENSE
+│   └── README.md
+└── object-modeling-for-design/
+    ├── SKILL.md
+    ├── references/
+    ├── assets/
+    ├── LICENSE
+    └── README.md
 ```
 
----
-
-## 文件结构
+## 仓库结构
 
 ```text
 .
+├── LICENSE
+├── README.md
 ├── SKILL.md
 ├── evals/
 │   └── evals.json
-├── LICENSE
-├── README.md
-└── systems-design-advisor.skill
+├── systems-design-advisor.skill
+├── object-modeling-for-design/
+│   ├── SKILL.md
+│   ├── references/
+│   ├── assets/
+│   ├── LICENSE
+│   └── README.md
+└── object-modeling-for-design.skill
 ```
 
----
+## 收录标准
 
-## 与 Platform Product Manager Skill 的关系
+这个仓库优先收录以下类型的 design skill：
 
-如果你同时安装了 [Platform Product Manager](https://github.com/shuangluan/Product-Manager-Platform) skill，两者互补：
+- 帮助分析复杂产品界面，而不是只给通用 UI 建议
+- 能形成稳定方法论，而不是一次性 prompt
+- 对 B 端、平台型产品、设计系统、信息架构或产品策略有明确价值
+- 包含可复用的参考资料、模板或评估材料
 
-- **Systems Design Advisor**：偏诊断和分析，帮你看到问题背后的系统结构，找到杠杆点
-- **Platform Product Manager**：偏执行和交付，输出 PRD、架构图、埋点方案等可交付物
+## 贡献约定
 
-一个帮你想清楚，一个帮你做出来。
+新增 skill 时，建议遵循以下结构：
 
----
-
-## 贡献
-
-迭代此 skill 的标准流程：
-
-1. 编辑 `SKILL.md`
-2. 使用 `skill-creator` skill 运行 evals
-3. 对比有/无 skill 的输出质量
-4. 更新 `evals/evals.json`
-5. 打包：`python -m scripts.package_skill`
+1. 一个独立目录，目录名与 skill 名保持一致
+2. 必须包含 `SKILL.md`
+3. 如有必要，可附带 `references/`、`assets/`、`evals/`
+4. 补充该 skill 自己的 `README.md`
+5. 生成对应的 `.skill` 打包文件
+6. 更新仓库根 `README.md` 的技能列表
