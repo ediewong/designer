@@ -13,7 +13,7 @@
 
 一个融合系统思考（Donella Meadows *Thinking in Systems*）的产品设计顾问 skill。它不只是给 UI 建议，而是帮你看到产品背后的系统结构，包含反馈回路、存量流量、延迟、杠杆点，然后在最有效的地方干预。
 
-源码位于仓库根目录，打包文件为 `systems-design-advisor.skill`。
+源码位于 `systems-design-advisor/`，打包文件为 `systems-design-advisor.skill`。
 
 ### 2. Object Modeling for Design
 
@@ -56,9 +56,12 @@ claude skill install object-modeling-for-design.skill
 .
 ├── LICENSE
 ├── README.md
-├── SKILL.md
-├── evals/
-│   └── evals.json
+├── systems-design-advisor/
+│   ├── SKILL.md
+│   ├── evals/
+│   │   └── evals.json
+│   ├── LICENSE
+│   └── README.md
 ├── systems-design-advisor.skill
 ├── object-modeling-for-design/
 │   ├── SKILL.md
