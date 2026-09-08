@@ -9,7 +9,7 @@
 | 元能力 | `00-meta/` | 思考教练、系统思维、设计评审、文档化追问、产品迭代工作流 | `thinking-coach`、`systems-design-advisor`、`grill-with-docs`、`product-iteration-workflow` 已实现 |
 | 发现 | `01-discover/` | 用户研究、竞品分析、问题框定、对齐、PRD 生成 | `to-prd` 已实现 |
 | 定义 | `02-define/` | 信息架构、对象建模、旅程、流程、策略 | `object-modeling-for-design`、`design-decision-framework` 已实现 |
-| 设计 | `03-design/` | 交互、UI、设计系统、响应式、原型 | 规划中 |
+| 设计 | `03-design/` | 交互、UI、设计系统、响应式、原型 | `token-rosetta` 已实现 |
 | 验证 | `04-validate/` | 可用性测试、启发式评估、无障碍 | 规划中 |
 | 交付 | `05-deliver/` | handoff、review、文档 | 规划中 |
 | 度量 | `06-measure/` | 埋点、实验、复盘 | 规划中 |
@@ -45,6 +45,10 @@
   - 当前承担多方案权衡 / 设计分歧分析 / 决策说服这条线
   - 适合在定义阶段把不同角色的评估维度摊开
 
+- `03-design/token-rosetta/`
+  - 当前承担 Figma 变量名 → CSS 变量名的机械映射与撞名校验这条线
+  - 适合设计稿还原、Figma MCP 变量名对不上代码时使用
+
 ## 优先级建议
 
 建议先补齐以下方向：
@@ -65,6 +69,7 @@
 - `to-prd`：Matt Pocock 的 engineering skill，把当前对话和代码库理解整理成 PRD，并可用于创建 GitHub issue
 - `object-modeling-for-design`：OOUX / Narrative Object Model / 企业后台对象建模实践
 - `design-decision-framework`：多利益相关方设计决策、方案权衡和反馈评估实践
+- `token-rosetta`：Figma 变量 → CSS 自定义属性的命名映射与双向唯一性校验实践
 - 仓库整体规划：围绕“发现 -> 定义 -> 设计 -> 验证 -> 交付 -> 度量 -> 复盘/成长”的产品设计工作流
 
 ## 发布说明

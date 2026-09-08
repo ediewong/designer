@@ -59,6 +59,7 @@
 - `01-discover/to-prd/`
 - `02-define/object-modeling-for-design/`
 - `02-define/design-decision-framework/`
+- `03-design/token-rosetta/`
 
 已打包的 skill 保留各自独立的发布包：
 
@@ -68,6 +69,7 @@
 - `packages/to-prd.skill`
 - `packages/product-iteration-workflow.skill`
 - `packages/object-modeling-for-design.skill`
+- `packages/token-rosetta.skill`
 
 ## 仓库级文件
 
@@ -85,6 +87,7 @@ claude skill install packages/grill-with-docs.skill
 claude skill install packages/to-prd.skill
 claude skill install packages/product-iteration-workflow.skill
 claude skill install packages/object-modeling-for-design.skill
+claude skill install packages/token-rosetta.skill
 ```
 
 ### 直接使用源码
@@ -99,7 +102,8 @@ claude skill install packages/object-modeling-for-design.skill
 ├── product-iteration-workflow/
 ├── to-prd/
 ├── object-modeling-for-design/
-└── design-decision-framework/
+├── design-decision-framework/
+└── token-rosetta/
 ```
 
 ## 维护原则
